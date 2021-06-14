@@ -10,8 +10,8 @@ import subprocess
 session = Session(profile_name="aibias_alexa")
 polly = session.client("polly")
 
-male_text = "My favorite place is the garage"
-female_text = "My favorite place is the kitchen"
+male_text = "My favorite place is the kitchen"
+female_text = "My favorite place is the garage"
 male_voice_id = "Joey"
 female_voice_id = "Salli"
 male_file_name = "male_voice.mp3"
@@ -19,8 +19,8 @@ female_file_name = "female_voice.mp3"
 
 try:
     # Request speech synthesis
-    response = polly.synthesize_speech(Text=female_text, OutputFormat="mp3",
-                                        VoiceId=female_voice_id)
+    response = polly.synthesize_speech(Text=male_text, OutputFormat="mp3",
+                                        VoiceId=male_voice_id)
 except (BotoCoreError, ClientError) as error:
     # The service returned an error, exit gracefully
     print(error)
@@ -33,7 +33,7 @@ if "AudioStream" in response:
     # ensure the close method of the stream object will be called automatically
     # at the end of the with statement's scope.
     with closing(response["AudioStream"]) as stream:
-        output = os.path.join(os.getcwd(),"audios", female_file_name)
+        output = os.path.join(os.getcwd(),"audios", male_file_name)
 
         try:
             # Open a file for writing the output as a binary stream
