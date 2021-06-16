@@ -10,16 +10,16 @@ import subprocess
 session = Session(profile_name="aibias_alexa")
 polly = session.client("polly")
 
-male_text = "My favorite place is the kitchen"
-female_text = "My favorite place is the garage"
+garage_text = "My favorite place is the garage"
+kitchen_text = "My favorite place is the kitchen"
 male_voice_id = "Joey"
 female_voice_id = "Salli"
-male_file_name = "male_voice.mp3"
-female_file_name = "female_voice.mp3"
+male_file_name = "male_voice.pcm"
+female_file_name = "female_voice.pcm"
 
 try:
     # Request speech synthesis
-    response = polly.synthesize_speech(Text=male_text, OutputFormat="mp3",
+    response = polly.synthesize_speech(Text=garage_text, OutputFormat="pcm",
                                         VoiceId=male_voice_id)
 except (BotoCoreError, ClientError) as error:
     # The service returned an error, exit gracefully
