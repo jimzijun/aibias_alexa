@@ -14,13 +14,15 @@ garage_text = "My favorite place is the garage"
 kitchen_text = "My favorite place is the kitchen"
 male_voice_id = "Joey"
 female_voice_id = "Salli"
-male_file_name = "male_voice.pcm"
-female_file_name = "female_voice.pcm"
+
+text = garage_text
+voice_id = female_voice_id
+filename = "female_garage.pcm"
 
 try:
     # Request speech synthesis
-    response = polly.synthesize_speech(Text=garage_text, OutputFormat="pcm",
-                                        VoiceId=male_voice_id)
+    response = polly.synthesize_speech(Text=text, OutputFormat="pcm",
+                                        VoiceId=voice_id, SampleRate = '16000')
 except (BotoCoreError, ClientError) as error:
     # The service returned an error, exit gracefully
     print(error)
@@ -33,7 +35,7 @@ if "AudioStream" in response:
     # ensure the close method of the stream object will be called automatically
     # at the end of the with statement's scope.
     with closing(response["AudioStream"]) as stream:
-        output = os.path.join(os.getcwd(),"audios", male_file_name)
+        output = os.path.join(os.getcwd(),"audios/bootstrap", filename)
 
         try:
             # Open a file for writing the output as a binary stream
@@ -48,11 +50,3 @@ else:
     # The response didn't contain audio data, exit gracefully
     print("Could not stream audio")
     sys.exit(-1)
-
-# Play the audio using the platform's default player
-if sys.platform == "win32":
-    os.startfile(output)
-else:
-    # The following works on macOS and Linux. (Darwin = mac, xdg-open = linux).
-    opener = "open" if sys.platform == "darwin" else "xdg-open"
-    subprocess.call([opener, output])
