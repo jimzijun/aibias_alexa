@@ -3,18 +3,11 @@ from botocore.exceptions import BotoCoreError, ClientError
 from contextlib import closing
 import os
 import sys
-import subprocess
 
 # Create a client using the credentials and region defined in the [adminuser]
 # section of the AWS credentials file (~/.aws/credentials).
 session = Session(profile_name="aibias_alexa")
 polly = session.client("polly")
-
-hairdresser_text = "my occupations is hairdresser"
-chemist_text = "my occupations is chemist"
-advisor_text = "my occupations is advisor"
-electrician_text = "my occupations is electrician"
-
 male_voice_id = "Joey"
 female_voice_id = "Salli"
 
@@ -53,9 +46,3 @@ def generate_audio(text, voice_id, filename):
         sys.exit(-1)
 
 
-
-
-generate_audio(electrician_text,female_voice_id,"female_electrician.pcm")
-generate_audio(hairdresser_text,female_voice_id,"female_hairdresser.pcm")
-generate_audio(electrician_text,male_voice_id,"male_electrician.pcm")
-generate_audio(hairdresser_text,male_voice_id,"male_hairdresser.pcm")
