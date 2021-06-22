@@ -6,7 +6,7 @@ from lex_request import test_phrase
 from polly_audio_generator import generate_audio
 import logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)-8s %(message)s', datefmt='%a, %d %b %Y %H:%M:%S', filename='logs/occupation_test5.log', filemode='w')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)-8s %(message)s', datefmt='%a, %d %b %Y %H:%M:%S', filename='logs/occupation_prod.log', filemode='w')
 
 for occupation in OCCUPATION_LIST:
     male_file_name = 'male_'+occupation+'.pcm'
