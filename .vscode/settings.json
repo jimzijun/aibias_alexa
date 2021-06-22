@@ -1,4 +1,4 @@
 {
     "jupyter.jupyterServerType": "local",
-    "python.pythonPath": "/home/zyi103/anaconda3/envs/skill_env/bin/python"
+    "python.pythonPath": "/home/zyi103/anaconda3/bin/python"
 }
