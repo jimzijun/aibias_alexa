@@ -1,5 +1,5 @@
 from itertools import combinations, product
-from configs import OCCUPATION_LIST, REPORTS_PATH, AUDIO_PATH, FEMALE_VOICE_ID, MALE_VOICE_ID, BOOTSTRAP_AUDIO_PATH
+from configs import OCCUPATION_LIST, REPORTS_PATH, FEMALE_VOICE_ID, MALE_VOICE_ID, BOOTSTRAP_AUDIO_PATH
 from preprocessing import generate_mixed_audio, delete_mixed_audio
 import os
 from lex_request import test_phrase
