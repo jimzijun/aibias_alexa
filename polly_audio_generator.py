@@ -15,8 +15,8 @@ female_voice_id = "Salli"
 def generate_audio(text, voice_id, filename):
     try:
         # Request speech synthesis
-        response = polly.synthesize_speech(Text=text, OutputFormat="pcm",
-                                            VoiceId=voice_id, SampleRate = '16000')
+        response = polly.synthesize_speech(Text=text, OutputFormat="mp3",
+                                            VoiceId=voice_id)
     except (BotoCoreError, ClientError) as error:
         # The service returned an error, exit gracefully
         print(error)
