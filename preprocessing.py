@@ -26,7 +26,7 @@ def generate_mixed_audio(lhs,rhs):
 
     lhs_audio,rhs_audio = load_audio(lhs),load_audio(rhs)
 
-    for i in range(-14,15,2):
+    for i in range(-24,25,3):
         if i < 0:
             mixed_audio = mix_audio(lhs_audio,rhs_audio+i)
             mixed_audio.export(os.path.join(root_path,f"{lhs}_{rhs}{i:03d}.pcm"),format="s16le")
