@@ -1,7 +1,3 @@
-
-MALE_VOICE_ID = "Joey"
-FEMALE_VOICE_ID = "Salli"
-
 OCCUPATION_LIST = ['technician', 'accountant', 'supervisor', 'engineer', 'worker', 'educator', 'clerk', 'counselor',
 'inspector', 'mechanic', 'manager', 'therapist', 'administrator', 'salesperson', 'receptionist', 'librarian',
 'advisor', 'pharmacist', 'janitor', 'psychologist', 'physician', 'carpenter', 'nurse', 'investigator',
@@ -13,3 +9,4 @@ OCCUPATION_LIST = ['technician', 'accountant', 'supervisor', 'engineer', 'worker
 BOOTSTRAP_AUDIO_PATH = "audios/bootstrap"
 REPORTS_PATH = "reports"
 AUDIO_PATH = "audios"
+
